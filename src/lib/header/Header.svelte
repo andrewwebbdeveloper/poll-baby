@@ -5,9 +5,7 @@
 
 <header>
 	<div class="corner">
-		<a href="https://kit.svelte.dev">
-			<img src={logo} alt="SvelteKit" />
-		</a>
+	
 	</div>
 
 	<nav data-sveltekit-prefetch>
@@ -18,11 +16,11 @@
 			<li class:active={$page.url.pathname === '/'}>
 				<a href="/">Home</a>
 			</li>
-			<li class:active={$page.url.pathname === '/about'}>
-				<a href="/about">About</a>
+			<li class:active={$page.url.pathname === '/baby-t'}>
+				<a href="/baby-t">Baby T</a>
 			</li>
-			<li class:active={$page.url.pathname === '/todos'}>
-				<a href="/todos">Todos</a>
+			<li class:active={$page.url.pathname === '/baby-h'}>
+				<a href="/baby-h">Baby H</a>
 			</li>
 		</ul>
 		<svg viewBox="0 0 2 3" aria-hidden="true">
