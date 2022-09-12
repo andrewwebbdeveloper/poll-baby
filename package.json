@@ -8,7 +8,9 @@
 		"check": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json --watch",
 		"lint": "prettier --check .",
-		"format": "prettier --write ."
+		"format": "prettier --write .",
+		"test": "vitest",
+		"coverage": "vitest run --coverage"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "next",
