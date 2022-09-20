@@ -8,10 +8,16 @@ import {guesses} from '$lib/guesses.js'
 	<meta name="description" content="Civil competition to guess things Baby T" />
 </svelte:head>
 
-<div>
-<h1><Results guesses={guesses.T}/></h1>
+<div class="container">
+<div></div>
+<Results guesses={guesses.T}/>
+<div></div>
 </div>
 
 <style>
-	
+	.container {
+		display: grid;
+	  grid-template-columns: 1fr minmax(25rem, 1fr) 1fr;
+
+	}
 </style>
