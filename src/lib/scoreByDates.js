@@ -24,6 +24,5 @@ export function scoreByDates(guessArray, DOB) {
 			return [...acc, { ...person, dateScore: score }];
 		}, []);
 
-	console.log(result);
 	return result;
 }
