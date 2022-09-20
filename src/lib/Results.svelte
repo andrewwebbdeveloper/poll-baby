@@ -54,8 +54,15 @@ p {
 .container {
   margin: 0.5rem;
   background-color: var(--tertiary-color);
+  box-shadow: 1px 2px 3px var(--primary-color);
   border-radius: 5px;
   padding: 1rem;
+
+  transition: scale 0.2s ease;
+}
+
+.container:hover {
+  scale: 1.01;
 }
 
 .card-header > h3 {
