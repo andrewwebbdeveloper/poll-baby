@@ -1,5 +1,6 @@
 <script>
-
+import Results from '$lib/Results.svelte'
+import {guesses} from '$lib/guesses.js'
 </script>
 
 <svelte:head>
@@ -8,7 +9,7 @@
 </svelte:head>
 
 <div>
-<h1>Baby T</h1>
+<h1><Results guesses={guesses.T}/></h1>
 </div>
 
 <style>
