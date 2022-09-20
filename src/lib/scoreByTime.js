@@ -22,6 +22,7 @@ export function scoreByTime(guessArray, TOB) {
 		}, []);
 
 	console.log(result);
+	return result;
 }
 
 const smallestDiff = (guess, TOB) => {
