@@ -25,10 +25,10 @@ describe('scoreByGender', () => {
 
 describe('scoreTotal', () => {
 	it('logs', () => {
-		let guessArray = guesses.T;
+		let guessArray = guesses.H;
 		guessArray = scoreByDates(guessArray, new Date('11/07/2022'));
 		guessArray = scoreByTime(guessArray, { hour: 20, minute: 38 });
-		guessArray = scoreByGender(guessArray, 'girl');
+		guessArray = scoreByGender(guessArray, 'boy');
 
 		scoreTotal(guessArray);
 		console.log(scoreTotal(guessArray));

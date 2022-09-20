@@ -1,3 +1,7 @@
+
+// Lowest score wins
+// Ties are not broken
+
 export function scoreTotal(guessArray) {
 	const result = guessArray
 		.reduce((acc, person) => {
