@@ -25,6 +25,9 @@ export function scoreByTime(guessArray, TOB) {
 	return result;
 }
 
+// Used to calculate the smallest difference in minutes disregarding dates
+// This means that round-the-clock closeness counts
+// (i.e. 11pm is closer to 1am tommorrow than 1am today)
 const smallestDiff = (guess, TOB) => {
 	const yesterday = (hour, minute) => new Date(2022, 1, 9, hour, minute);
 	const current = (hour, minute) => new Date(2022, 1, 10, hour, minute);
