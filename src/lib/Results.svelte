@@ -12,9 +12,30 @@
 
 </script>
 
-<div>
-  <h1>
+<div class="container">
+  <h3 class="left-align card-name">
  Something to show
-  </h1>
-  <p style="font-size: 1rem">{JSON.stringify(total[0])}</p>
+  </h3>
+  <p class="left-align" >{JSON.stringify(total[0])}</p>
 </div>
+
+<style>
+p {
+  font-size: 1rem;
+}
+.left-align {
+
+  text-align: left;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--tertiary-color);
+  border-radius: 5px;
+  padding: 1rem;
+}
+
+.card-name {
+  font-size: 1.5rem;
+}
+</style>
