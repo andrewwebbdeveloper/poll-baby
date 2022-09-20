@@ -21,8 +21,9 @@ export function scoreByDates(guessArray, DOB) {
 
 			const score = previousPersonSameDate ? previousPerson['dateScore'] : participants - index;
 
-			return [...acc, { ...person, dateScore: score }];
+			return [...acc, { ...person, dateScore: score, daysFromDOB }];
 		}, []);
 
+	// console.log(result);
 	return result;
 }
