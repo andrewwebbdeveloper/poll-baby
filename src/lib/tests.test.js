@@ -1,6 +1,7 @@
 import { guesses } from './guesses.js';
 import { scoreByDates } from './scoreByDates.js';
 import { scoreByTime } from './scoreByTime.js';
+import { scoreByGender } from './scoreByGender.js';
 import { describe, it, expect } from 'vitest';
 
 describe('scoreByDates', () => {
@@ -12,5 +13,11 @@ describe('scoreByDates', () => {
 describe('scoreByTime', () => {
 	it('logs', () => {
 		scoreByTime(guesses.T, { hour: 20, minute: 38 });
+	});
+});
+
+describe('scoreByGender', () => {
+	it('logs', () => {
+		scoreByGender(guesses.T, 'girl');
 	});
 });
