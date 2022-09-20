@@ -16,8 +16,10 @@ import {guesses} from '$lib/guesses.js'
 
 <style>
 	.container {
-		display: grid;
+		display: flex;
+		flex-direction: column;
 	  grid-template-columns: 1fr minmax(25rem, 1fr) 1fr;
+		margin: 0 auto;
 
 	}
 </style>
