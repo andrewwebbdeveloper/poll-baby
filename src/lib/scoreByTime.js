@@ -1,7 +1,9 @@
 import { differenceInMinutes } from 'date-fns';
 
-// TOB: {hour, minute}
+// rank determined by the closest minute
+// score determined by the rank, weighted by the amount of participants
 
+// TOB: {hour, minute}
 export function scoreByTime(guessArray, TOB) {
 	const result = guessArray
 		.sort((a, b) => {

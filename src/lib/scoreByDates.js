@@ -1,5 +1,8 @@
 import { differenceInCalendarDays } from 'date-fns';
 
+// rank determined by the closest date
+// score determined by the rank, weighted by the amount of participants
+
 export function scoreByDates(guessArray, DOB) {
 	const result = guessArray
 		.sort((a, b) => {
