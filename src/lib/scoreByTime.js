@@ -21,7 +21,7 @@ export function scoreByTime(guessArray, TOB) {
 			return [...acc, { ...person, timeScore: score, minutesFromTOB: timeFromTOB }];
 		}, []);
 
-	console.log(result);
+	// console.log(result);
 	return result;
 }
 
