@@ -7,8 +7,8 @@ import { lightFormat } from 'date-fns'
   
   export let guesses;
   // export let date;
-  // export let time;
-  // export let gender;
+  export let time;
+  export let gender;
 
   function hoursAndMinutesText(person, minutes) {
     const hours = Math.floor(person.minutesFromTOB / 60)
@@ -17,10 +17,15 @@ import { lightFormat } from 'date-fns'
     return `${hours ? `${hours} hour${hours > 1 ? 's' : ''} and` : ''} ${remainingMins ? `${remainingMins} minute${remainingMins > 1 ? 's' : ''}` : ''}`
   }
 
+  function timeObject(timeString) {
+    return !timeString ? '' : {hour: timeString.substring(0,1), minute: timeString.substring(3,-1)}
+  }
+
   // const total = getTotal(guesses, date, time, gender)
   const total = getTotal(guesses, new Date(`10/2/2022`), {hour: 4, minute: 15}, 'girl').sort((a,b) => a.rank - b.rank)
 
 </script>
+{timeObject(time).hour}
 {#each total as person}
 <div class="container left-align">
   <div class="card-header">

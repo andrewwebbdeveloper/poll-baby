@@ -1,6 +1,9 @@
 <script>
 import Results from '$lib/Results.svelte'
 import {guesses} from '$lib/guesses.js'
+
+let time
+let gender
 </script>
 
 <svelte:head>
@@ -10,7 +13,15 @@ import {guesses} from '$lib/guesses.js'
 
 <div class="container">
 <div></div>
-<Results guesses={guesses.T}/>
+<div>
+<input type="date">
+<input type="time" bind:value={time}>
+<select name="" id="" bind:value={gender}>
+	<option value="girl">girl</option>
+	<option value="boy">boy</option>
+</select>
+<Results guesses={guesses.T} gender={gender} time={time}/>
+</div>
 <div></div>
 </div>
 
