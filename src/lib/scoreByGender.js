@@ -10,6 +10,6 @@ export function scoreByGender(guessArray, gender) {
 		return [...acc, { ...person, genderScore: score }];
 	}, []);
 
-	console.log(result);
+	// console.log(result);
 	return result;
 }
