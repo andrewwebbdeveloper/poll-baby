@@ -2,8 +2,10 @@
 import Results from '$lib/Results.svelte'
 import {guesses} from '$lib/guesses.js'
 
+let date
 let time
 let gender
+
 </script>
 
 <svelte:head>
@@ -14,18 +16,24 @@ let gender
 <div class="container">
 <div></div>
 <div>
-<input type="date">
+<div class="input-container">
+<input type="date" bind:value={date} on:input={ (e) => (date = e.target.value)}>
 <input type="time" bind:value={time}>
 <select name="" id="" bind:value={gender}>
 	<option value="girl">girl</option>
 	<option value="boy">boy</option>
 </select>
+</div>
 <Results guesses={guesses.T} gender={gender} time={time}/>
 </div>
 <div></div>
 </div>
 
 <style>
+.input-container {
+	display: flex;
+	justify-content: center;
+}
 	.container {
 		display: flex;
 		flex-direction: column;
