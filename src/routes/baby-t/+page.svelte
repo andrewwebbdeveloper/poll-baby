@@ -24,7 +24,7 @@ let gender
 	<option value="boy">boy</option>
 </select>
 </div>
-<Results guesses={guesses.T} gender={gender} time={time}/>
+<Results guesses={guesses.T} gender={gender} time={time} date={date}/>
 </div>
 <div></div>
 </div>

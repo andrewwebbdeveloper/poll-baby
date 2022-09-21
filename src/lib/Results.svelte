@@ -18,10 +18,10 @@ import { lightFormat, toDate, format } from 'date-fns'
   }
 
   function formatTimeStringToObject(timeString) {
-    return !timeString ? '' : {hour: timeString.substring(0,2), minute: timeString.substring(3)}
+    return !timeString ? '' : {hour: Number(timeString.substring(0,2)), minute: Number(timeString.substring(3))}
   }
 
-  $: total = getTotal(guesses, date, formatTimeStringToObject(time), gender)
+  $: total = getTotal(guesses, toDate(new Date(date)), formatTimeStringToObject(time), gender).sort((a,b) => a.rank - b.rank)
   // const total = getTotal(guesses, new Date(`10/2/2022`), {hour: 4, minute: 15}, 'girl').sort((a,b) => a.rank - b.rank)
 
 </script>
