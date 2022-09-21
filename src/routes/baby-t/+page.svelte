@@ -9,8 +9,9 @@ let time
 let gender
 
 onMount(() => {
-	date = format(Date.now(), 'yyyy-MM-dd')
-	time = '12:00'
+	const today = new Date()
+	date = format(today, 'yyyy-MM-dd')
+	time = `${today.getHours().toString().padStart(2, 0)}:${today.getMinutes().toString().padStart(2, 0)}`
 	gender = 'boy'
 })
 
