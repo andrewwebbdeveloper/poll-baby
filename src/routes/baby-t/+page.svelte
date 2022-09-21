@@ -1,10 +1,18 @@
 <script>
+import { onMount } from 'svelte';
+import { lightFormat, toDate, format } from 'date-fns'
 import Results from '$lib/Results.svelte'
 import {guesses} from '$lib/guesses.js'
 
 let date
 let time
 let gender
+
+onMount(() => {
+	date = format(Date.now(), 'yyyy-MM-dd')
+	time = '12:00'
+	gender = 'boy'
+})
 
 </script>
 
