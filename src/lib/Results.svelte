@@ -16,7 +16,9 @@ import { lightFormat, toDate, format } from 'date-fns'
     const hours = Math.floor(person.minutesFromTOB / 60)
     const remainingMins = minutes - (hours * 60)
 
-    return `${hours ? `${hours} hour${hours > 1 ? 's' : ''} and` : ''} ${remainingMins ? `${remainingMins} minute${remainingMins > 1 ? 's' : ''}` : ''}`
+    if(hours === 0 && remainingMins === 0) { return `Guessed the time exactly!!!`}
+
+    return `${hours ? `${hours} hour${hours > 1 ? 's' : ''} and` : ''} ${remainingMins ? `${remainingMins} minute${remainingMins > 1 ? 's' : ''}` : ''} from T.O.B.`
   }
 
   function formatTimeStringToObject(timeString) {
@@ -44,7 +46,7 @@ import { lightFormat, toDate, format } from 'date-fns'
    <p class="" >🗓 {person.daysFromDOB} days from D.O.B.<br> <em>({lightFormat(person.date, 'MM-dd-yyyy')})</em></p>
   </li>
   <li>
-   <p class="" >⏰ {hoursAndMinutesText(person, person.minutesFromTOB)} from T.O.B.
+   <p class="" >⏰ {hoursAndMinutesText(person, person.minutesFromTOB)}
    <br> <em>({person.time.hour > 12 ? person.time.hour -  12:person.time.hour}:{`${person.time.minute}`.padStart(2, '0')} {person.time.hour > 12 ? 'pm':'am'})</em></p>
   </li>
   <li>
