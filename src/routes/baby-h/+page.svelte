@@ -1,6 +1,14 @@
 <script>
+
 import Results from '$lib/Results.svelte'
+import Inputs from '$lib/Inputs.svelte'
 import {guesses} from '$lib/guesses.js'
+
+
+let date
+let time
+let gender
+
 </script>
 
 <svelte:head>
@@ -9,12 +17,25 @@ import {guesses} from '$lib/guesses.js'
 </svelte:head>
 
 <div class="container">
-<div></div>
-<Results guesses={guesses.H}/>
+	<div></div>
+	<div>
+		<Inputs 
+		bind:date={date}
+		bind:time={time}
+		bind:gender={gender}
+		/>
+		<Results 
+		guesses={guesses.H}
+		gender={gender}
+		time={time}
+		date={date}
+		/>
+	</div>
 <div></div>
 </div>
 
 <style>
+
 	.container {
 		display: flex;
 		flex-direction: column;
