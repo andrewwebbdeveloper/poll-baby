@@ -1,11 +1,10 @@
-
-// Lowest score wins
+// Score closest to 0 wins ( points are negative )
 // Ties are not broken
 
 export function scoreTotal(guessArray) {
 	const result = guessArray
 		.reduce((acc, person) => {
-			return [...acc, { ...person, totalScore: altScore(person) }];
+			return [...acc, { ...person, totalScore: calculateTotals(person) }];
 		}, [])
 		.sort((a, b) => b.totalScore - a.totalScore)
 		.reduce((acc, person, index, array) => {
@@ -13,7 +12,7 @@ export function scoreTotal(guessArray) {
 			const isFirstPerson = index === 0;
 			const previousPerson = !isFirstPerson ? acc[index - 1] : null;
 
-      // Tie gives same rank
+			// Tie gives same rank
 			const rank =
 				previousPerson?.['totalScore'] === person['totalScore']
 					? previousPerson['rank']
@@ -25,24 +24,8 @@ export function scoreTotal(guessArray) {
 	return result;
 }
 
-// These are too close together ( too many ties )
-const sumScores = (person) => {
-	let total = 0;
-
-	for (let key in person) {
-		switch (key) {
-			case 'dateScore':
-			case 'timeScore':
-			case 'genderScore':
-				total += person[key];
-		}
-	}
-
-	return total;
-};
-
 // Lowest score wins, indicates closeness to actual date / time / gender
-const altScore = (person) => {
+const calculateTotals = (person) => {
 	let total = 0;
 
 	for (let key in person) {

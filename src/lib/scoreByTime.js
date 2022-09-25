@@ -1,7 +1,6 @@
 import { differenceInMinutes } from 'date-fns';
 
-// rank determined by the closest minute
-// score determined by the rank, weighted by the amount of participants
+// Score derived from minutes from T.O.B.
 
 // TOB: {hour, minute}
 export function scoreByTime(guessArray, TOB) {
@@ -9,16 +8,8 @@ export function scoreByTime(guessArray, TOB) {
 		.sort((a, b) => {
 			return smallestDiff(a, TOB) - smallestDiff(b, TOB);
 		})
-		.reduce((acc, person, index, array) => {
-			const participants = array.length;
-			const isFirstPerson = index === 0;
-			const previousPerson = !isFirstPerson ? acc[index - 1] : null;
-
+		.reduce((acc, person) => {
 			const timeFromTOB = smallestDiff(person, TOB);
-			const previousPersonTimefromTOB = previousPerson && smallestDiff(previousPerson, TOB);
-			const previousPersonSameTime = timeFromTOB === previousPersonTimefromTOB;
-
-			const score = previousPersonSameTime ? previousPerson['timeScore'] : participants - index;
 
 			return [...acc, { ...person, minutesFromTOB: timeFromTOB }];
 		}, []);
