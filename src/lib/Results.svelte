@@ -27,7 +27,6 @@ import { lightFormat, toDate, format } from 'date-fns'
   // const total = getTotal(guesses, new Date(`10/2/2022`), {hour: 4, minute: 15}, 'girl').sort((a,b) => a.rank - b.rank)
 
   $: {
-    console.log(`totals are:`)
     console.table(total)
   }
 

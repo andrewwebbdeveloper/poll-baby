@@ -1,4 +1,4 @@
-import { differenceInCalendarDays } from 'date-fns';
+import { differenceInDays } from 'date-fns';
 //
 // score derived from days from DOB
 //
@@ -19,4 +19,4 @@ export function scoreByDates(guessArray, DOB) {
 }
 
 const absoluteDifferenceInDays = (dateLeft, dateRight) =>
-	Math.abs(differenceInCalendarDays(dateLeft, dateRight));
+	Math.abs(differenceInDays(dateLeft, dateRight));
