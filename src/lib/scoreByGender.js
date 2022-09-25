@@ -7,7 +7,7 @@ export function scoreByGender(guessArray, gender) {
 		const participants = array.length;
 		const score = person.gender === gender ? participants / 2 : 0;
 
-		return [...acc, { ...person, genderScore: score }];
+		return [...acc, { ...person }];
 	}, []);
 
 	// console.log(result);

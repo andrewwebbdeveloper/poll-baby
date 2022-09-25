@@ -20,7 +20,7 @@ export function scoreByTime(guessArray, TOB) {
 
 			const score = previousPersonSameTime ? previousPerson['timeScore'] : participants - index;
 
-			return [...acc, { ...person, timeScore: score, minutesFromTOB: timeFromTOB }];
+			return [...acc, { ...person, minutesFromTOB: timeFromTOB }];
 		}, []);
 
 	// console.log(result);

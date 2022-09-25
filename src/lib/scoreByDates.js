@@ -15,12 +15,13 @@ export function scoreByDates(guessArray, DOB) {
 			const previousPerson = !isFirstPerson ? acc[index - 1] : null;
 
 			const daysFromDOB = absoluteDifferenceInDays(person.date, DOB);
-			const previousPersonDaysFromDOB = previousPerson && absoluteDifferenceInDays(previousPerson.date, DOB);
+			const previousPersonDaysFromDOB =
+				previousPerson && absoluteDifferenceInDays(previousPerson.date, DOB);
 			const previousPersonSameDate = daysFromDOB === previousPersonDaysFromDOB;
 
 			const score = previousPersonSameDate ? previousPerson['dateScore'] : participants - index;
 
-			return [...acc, { ...person, dateScore: score, daysFromDOB }];
+			return [...acc, { ...person, daysFromDOB }];
 		}, []);
 
 	// console.log(result);
