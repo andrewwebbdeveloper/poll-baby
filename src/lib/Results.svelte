@@ -39,7 +39,10 @@ import { lightFormat, toDate, format, addDays, subDays } from 'date-fns'
   <h3 class="left-align card-name">
  {person.name}
   </h3>
+  <span>
   <h3>{formatOrdinals(person.rank)}</h3>
+  <h6>( {person.totalScore} pts )</h6>
+  </span>
   </div>
   <ul>
   <li>
@@ -76,8 +79,24 @@ p {
 .container:hover {
   scale: 1.01;
 }
+.card-header > span {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+.card-header > span > h3,h6{
+  text-align: right;
+  margin: 0;
+}
+.card-header > span > h6{
+  transition: opacity 0.2s ease;
+  opacity: 0;
+}
+.card-header > span > h6:hover{
+  opacity: 0.4;
+}
 
-.card-header > h3 {
+.card-header > h3  {
   margin: 0;
  }
 .card-header {
