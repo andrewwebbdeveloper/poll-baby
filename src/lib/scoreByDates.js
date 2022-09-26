@@ -1,8 +1,11 @@
-import { differenceInDays } from 'date-fns';
+import { differenceInDays, format } from 'date-fns';
 //
 // score derived from days from DOB
 //
 export function scoreByDates(guessArray, DOB) {
+	// Clean date so that time is removed
+	DOB = new Date(format(DOB, 'MM/dd/yyyy'))
+	
 	const result = guessArray
 		.sort((a, b) => {
 			// Least amount of days first
@@ -18,5 +21,5 @@ export function scoreByDates(guessArray, DOB) {
 	return result;
 }
 
-const absoluteDifferenceInDays = (dateLeft, dateRight) =>
-	Math.abs(differenceInDays(dateLeft, dateRight));
+const absoluteDifferenceInDays = (dateLeft, dateRight) => 
+Math.abs(differenceInDays(dateLeft, dateRight));

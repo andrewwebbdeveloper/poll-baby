@@ -1,12 +1,12 @@
 <script>
-import { lightFormat, toDate, format } from 'date-fns'
+import { lightFormat, toDate, format, addDays, subDays } from 'date-fns'
 
   import getTotal from './totalHelper.js'
   import {formatOrdinals} from '$lib/formatOrdinals.js'
 
   
   export let guesses;
-  export let date = new Date();
+  export let date = subDays(new Date(), 1);
   export let time = '12:00';
   export let gender = 'boy';
 
@@ -25,7 +25,7 @@ import { lightFormat, toDate, format } from 'date-fns'
     return !timeString ? '' : {hour: Number(timeString.substring(0,2)), minute: Number(timeString.substring(3))}
   }
 
-  $: total = getTotal(guesses, toDate(new Date(date)), formatTimeStringToObject(time), gender).sort((a,b) => a.rank - b.rank)
+  $: total = getTotal(guesses, addDays(new Date(date), 1), formatTimeStringToObject(time), gender).sort((a,b) => a.rank - b.rank)
   // const total = getTotal(guesses, new Date(`10/2/2022`), {hour: 4, minute: 15}, 'girl').sort((a,b) => a.rank - b.rank)
 
   $: {
