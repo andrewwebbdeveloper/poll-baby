@@ -31,13 +31,13 @@ const calculateTotals = (person) => {
 	for (let key in person) {
 		switch (key) {
 			case 'daysFromDOB':
-				total += person[key] * 100; // makes category points closer
+				total += person[key] * 75; // makes category points closer
 				break;
 			case 'minutesFromTOB':
-				total += person[key];
+				total += person[key] / 2;
 				break;
 			case 'genderScore':
-				total -= person[key] * 100; // makes category points closer
+				total -= person[key] === true ? 175 : 0 // makes category points closer
 				break;
 		}
 	}
