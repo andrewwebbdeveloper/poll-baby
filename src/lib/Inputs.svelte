@@ -6,11 +6,13 @@ export let date
 export let time
 export let gender
 
+export let birthday = {}
+
 onMount(() => {
 	const today = new Date()
-	date = format(today, 'yyyy-MM-dd')
-	time = `${today.getHours().toString().padStart(2, 0)}:${today.getMinutes().toString().padStart(2, 0)}`
-	gender = 'boy'
+	date = birthday?.date ? format(birthday.date, 'yyyy-MM-dd') : format(today, 'yyyy-MM-dd')
+	time = birthday?.time ? birthday.time :`${today.getHours().toString().padStart(2, 0)}:${today.getMinutes().toString().padStart(2, 0)}`
+	gender = birthday?.gender ? birthday.gender : today.getSeconds() % 2 === 0 ?'boy' : 'girl'
 })
 
 </script>

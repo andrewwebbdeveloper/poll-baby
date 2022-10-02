@@ -9,6 +9,12 @@ let date
 let time
 let gender
 
+let birthday = {
+	date: new Date('10/1/2022'),
+	time: '18:23',
+	gender: 'boy',
+}
+
 </script>
 
 <svelte:head>
@@ -19,11 +25,13 @@ let gender
 <div class="container">
 	<div></div>
 	<div>
-		<Inputs 
+		<Inputs
+		birthday={birthday} 
 		bind:date={date}
 		bind:time={time}
 		bind:gender={gender}
 		/>
+		<p class="baby-data">🕺🏼🎉 <strong>Aaron Lyle T. －  9lbs 5oz</strong> 🎉🕺🏼</p>
 		<Results 
 		guesses={guesses.T}
 		gender={gender}
@@ -35,6 +43,10 @@ let gender
 </div>
 
 <style>
+
+	.baby-data {
+		text-align: center;
+	}
 
 	.container {
 		display: flex;
