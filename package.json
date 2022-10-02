@@ -28,6 +28,7 @@
 	"type": "module",
 	"dependencies": {
 		"@fontsource/fira-mono": "^4.5.0",
-		"date-fns": "^2.29.2"
+		"date-fns": "^2.29.2",
+		"svelte-confetti": "^1.2.0"
 	}
 }

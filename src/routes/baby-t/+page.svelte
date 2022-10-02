@@ -1,5 +1,8 @@
 <script>
 
+import { Confetti } from "svelte-confetti"
+
+
 import Results from '$lib/Results.svelte'
 import Inputs from '$lib/Inputs.svelte'
 import {guesses} from '$lib/guesses.js'
@@ -22,6 +25,18 @@ let birthday = {
 	<meta name="description" content="Civil competition to guess things Baby T" />
 </svelte:head>
 
+<div style="
+position: fixed;
+top: -50px;
+left: 0;
+height: 100vh;
+width: 100vw;
+display: flex;
+justify-content: center;
+overflow: hidden;
+pointer-events: none;">
+<Confetti x={[-5, 5]} y={[0, 0.1]} delay={[250, 5000]} infinite duration=5000 amount=800 fallDistance="100vh" />
+</div>
 <div class="container">
 	<div></div>
 	<div>
@@ -31,7 +46,9 @@ let birthday = {
 		bind:time={time}
 		bind:gender={gender}
 		/>
+		
 		<p class="baby-data">🕺🏼🎉 <strong>Aaron Lyle T. －  9lbs 5oz</strong> 🎉🕺🏼</p>
+		
 		<Results 
 		guesses={guesses.T}
 		gender={gender}
